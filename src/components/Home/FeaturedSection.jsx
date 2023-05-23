@@ -1,16 +1,10 @@
 import { MdBallot } from 'react-icons/md'
 
-import html5Icon from '../../assets/icons/html5.svg'
-import css3Icon from '../../assets/icons/css3.svg'
-import javascriptIcon from '../../assets/icons/javascript.svg'
 import typescriptIcon from '../../assets/icons/typescript.svg'
 import angularIcon from '../../assets/icons/angular.svg'
 import reactjsIcon from '../../assets/icons/reactjs.svg'
 import nextjsIcon from '../../assets/icons/nextjs.svg'
 import nodejsIcon from '../../assets/icons/nodejs.svg'
-import javaIcon from '../../assets/icons/java.svg'
-import pythonIcon from '../../assets/icons/python.svg'
-import rubyIcon from '../../assets/icons/ruby.svg'
 import sqlIcon from '../../assets/icons/sql.svg'
 import dockerIcon from '../../assets/icons/docker.svg'
 
@@ -22,7 +16,14 @@ import nodejsImage from '../../assets/cards/nodejs.png'
 import sqlImage from '../../assets/cards/sql.png'
 import dockerImage from '../../assets/cards/docker.png'
 
-import { Button, Card, SearchField, TechnologyAreaCard } from '../'
+import {
+  Button,
+  Card,
+  IntroductionText,
+  SearchField,
+  TechnologyAreaCard,
+  TechnologyIcons,
+} from '../'
 
 export function FeaturedSection() {
   const technologies = {
@@ -67,48 +68,12 @@ export function FeaturedSection() {
   }
 
   return (
-    <section className="text-white my-16">
-      <div className="max-w-sm sm:max-w-md">
-        <span className="text-sm">+20 temas sobre desarrollo web</span>
-        <h3 className="text-3xl sm:text-4xl font-medium my-2">
-          Aprende sobre las herramientas y tecnologías
-        </h3>
-        <p>
-          Aprende a programar y construir sitios web desde cero, domina las
-          herramientas y tecnologías más actuales.
-        </p>
-      </div>
+    <section className="text-[#f1f1f1] my-16">
+      <IntroductionText />
+      <TechnologyIcons />
 
-      <ul className="my-10 direct-child:inline-block direct-child:bg-gradient-to-b direct-child:from-white direct-child:to-gray-500 direct-child:p-[0.4rem] direct-child:rounded-[50px] sm:direct-child:mr-6 direct-child:mr-3 [&_img]:w-6 [&_img]:h-6 [&_img]:object-contain [&_img]:select-none [&_img]:pointer-events-none">
-        <li>
-          <img src={html5Icon} draggable="false" />
-        </li>
-        <li>
-          <img src={css3Icon} draggable="false" />
-        </li>
-        <li>
-          <img src={javascriptIcon} draggable="false" />
-        </li>
-        <li>
-          <img src={reactjsIcon} draggable="false" />
-        </li>
-        <li>
-          <img src={javaIcon} draggable="false" />
-        </li>
-        <li>
-          <img src={pythonIcon} draggable="false" />
-        </li>
-        <li>
-          <img src={rubyIcon} draggable="false" />
-        </li>
-      </ul>
-
-      <div className="overflow-hidden">
-        <SearchField className="float-right" />
-      </div>
-
-      <div className="mt-10 direct-child:mb-8">
-        <div className="grid lg:grid-cols-2 gap-8">
+      <div className="mt-10">
+        <div className="lg:flex lg:justify-between lg:items-start lg:gap-8 direct-child:mb-8">
           <TechnologyAreaCard
             title={'Frontend'}
             technologies={technologies.frontend}
@@ -120,7 +85,7 @@ export function FeaturedSection() {
               title={'React.js - Desarrollo web'}
               description={'Biblioteca de JavaScript para construir interfaces'}
               to="#"
-              className="from-[#FFDF6F] to-[#983232] max-w-full sm:max-w-[230px]"
+              className="from-[#FFDF6F] to-[#983232] mt-5 2lg:mt-0"
             />
           </TechnologyAreaCard>
 
@@ -135,7 +100,7 @@ export function FeaturedSection() {
               title={'Node.js - Desarrollo web'}
               description={'Entorno de ejecución de JavaScript'}
               to="#"
-              className="from-[#4BBDFA] to-[#276CDA] max-w-full sm:max-w-[230px]"
+              className="from-[#4BBDFA] to-[#276CDA] mb-5 2lg:mb-0"
             />
           </TechnologyAreaCard>
         </div>
@@ -199,7 +164,9 @@ export function FeaturedSection() {
       </div>
 
       <div className="text-center">
-        <Button icon={MdBallot}>Ver todo</Button>
+        <Button icon={MdBallot} className="mt-5">
+          Ver todo
+        </Button>
       </div>
     </section>
   )

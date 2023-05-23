@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import { RiSearchLine } from 'react-icons/ri'
-import { BsDiscord } from 'react-icons/bs'
-import { FiMenu } from 'react-icons/fi'
-import { RxCross1 } from 'react-icons/rx'
 import { Link } from 'react-router-dom'
 
-import { IconButton, Logo } from '../'
+import { FiMenu } from 'react-icons/fi'
+import { RxCross1 } from 'react-icons/rx'
+
+import { IconButton, Logo, SearchField } from '../'
 
 export function Navbar() {
   const [menuOpened, setMenuOpened] = useState(false)
@@ -13,7 +12,7 @@ export function Navbar() {
   const toggleMenu = () => setMenuOpened((x) => !x)
 
   return (
-    <nav className="flex items-center justify-between text-[#D9D9D9] text-lg max-w-7xl mx-auto py-10 px-5">
+    <nav className="relative z-40 flex items-center justify-between text-[#D9D9D9] text-lg max-w-7xl mx-auto py-10 px-5">
       <div>
         <Logo />
       </div>
@@ -49,14 +48,8 @@ export function Navbar() {
           </li>
         </ul>
 
-        <div className="direct-child:inline-block direct-child:mr-10 last:direct-child:mr-0">
-          <IconButton Icon={RiSearchLine} />
-          <IconButton
-            as="a"
-            href="https://discord.gg/Hmew77TY"
-            target="_blank"
-            Icon={BsDiscord}
-          />
+        <div className="direct-child:inline-block direct-child:mr-2 last:direct-child:mr-0">
+          <SearchField />
         </div>
       </div>
     </nav>

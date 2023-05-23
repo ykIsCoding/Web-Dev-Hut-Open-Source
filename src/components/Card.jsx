@@ -13,7 +13,7 @@ export function Card({
 }) {
   return (
     <div
-      className={`bg-gray-500 bg-gradient-to-b p-4 rounded-3xl w-full max-w-[230px] max-h-[400px] overflow-auto relative [&_img]:select-none [&_img]:pointer-events-none ${className}`}
+      className={`bg-gray-500 bg-gradient-to-b p-4 rounded-3xl w-full 2lg:max-w-[230px] max-h-[400px] overflow-auto relative [&_img]:select-none [&_img]:pointer-events-none ${className}`}
       {...props}
     >
       <img
@@ -34,7 +34,7 @@ export function Card({
       )}
 
       <div>
-        <div className="font-medium text-white text-center">
+        <div className="font-medium text-[#f1f1f1] text-center">
           <h4 className="mt-2 text-xl sm:text-2xl">{title}</h4>
           <p className="mt-2 text-sm sm:text-base line-clamp-4 break-words">
             {description}
@@ -45,7 +45,7 @@ export function Card({
           <Link
             to={to}
             target={target}
-            className="w-7 h-7 bg-[#212D5F] block rounded-[50px] text-white mx-auto mt-4"
+            className="w-7 h-7 bg-[#212D5F] block rounded-[50px] text-[#f1f1f1] mx-auto mt-4"
           >
             <BiRightArrowAlt className="w-full h-full" />
           </Link>
